@@ -1,0 +1,75 @@
+/* Ite ad Joseph — navy and workshop brass; Spectral for the voice of the program, Source Sans for the tool */
+:root{
+  --bg:#F5F6F8; --surface:#FFFFFF; --ink:#18233A; --muted:#5A6478; --line:#D9DDE5;
+  --navy:#1F2F4A; --brass:#9C7A33; --brass-soft:#EFE6D2; --on-navy:#FFFFFF; --ok:#2E7D5B;
+  --display:"Spectral", Georgia, "Times New Roman", serif;
+  --body:"Source Sans 3", -apple-system, "Segoe UI", Roboto, sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root{
+  --bg:#0F1522; --surface:#172034; --ink:#E8ECF3; --muted:#9AA4B8; --line:#2A3550;
+  --navy:#2C416A; --brass:#D2AE62; --brass-soft:#3A3122; --on-navy:#FFFFFF; --ok:#5CC395; color-scheme:dark}}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:calc(68px + env(safe-area-inset-bottom,0px))}
+a{color:inherit}
+button{font:inherit;color:inherit}
+.wrap{max-width:680px;margin:0 auto;padding-inline:16px;padding-block:16px 24px;display:grid;gap:16px}
+header.top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.brand{font-family:var(--display);font-weight:700;font-size:1.3rem;letter-spacing:.01em}
+.brand span{color:var(--brass);font-style:italic}
+.meta{font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;text-align:right}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:14px;min-width:0}
+.eyebrow{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-size:.78rem;text-transform:uppercase;letter-spacing:.09em;color:var(--muted)}
+.daytag{background:var(--navy);color:var(--on-navy);border-radius:6px;padding:3px 9px;font-weight:700;font-variant-numeric:tabular-nums}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(1.6rem,6vw,2.2rem);line-height:1.15;margin:0;text-wrap:balance}
+h2{font-family:var(--display);font-size:1.15rem;margin:0}
+.player{display:flex;align-items:center;gap:14px}
+.play{flex:none;width:64px;height:64px;border-radius:50%;border:0;background:var(--navy);color:var(--on-navy);cursor:pointer;display:grid;place-items:center}
+.play svg{width:26px;height:26px;fill:currentColor}
+.track{flex:1;min-width:0;display:grid;gap:6px}
+.bar{height:8px;background:var(--line);border-radius:4px;overflow:hidden;cursor:pointer}
+.bar i{display:block;height:100%;width:0;background:var(--brass)}
+.time{font-size:.8rem;color:var(--muted);font-variant-numeric:tabular-nums;display:flex;justify-content:space-between}
+.small{border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:8px;padding:5px 9px;font-size:.8rem;cursor:pointer}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.verse{border-left:3px solid var(--brass);padding:4px 0 4px 14px;font-family:var(--display);font-style:italic;font-size:1.05rem}
+.verse b{font-style:normal;font-family:var(--body);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--brass);display:block}
+.box{background:var(--brass-soft);border-radius:10px;padding:12px 14px}
+.label{display:block;font-size:.74rem;letter-spacing:.09em;text-transform:uppercase;color:var(--brass);font-weight:700}
+details summary{cursor:pointer;font-weight:600;color:var(--brass);padding-block:4px}
+.prose p{margin:.6em 0}
+.marks{display:grid;gap:2px}
+.mark{display:flex;align-items:center;gap:12px;padding:10px 4px;border-bottom:1px solid var(--line);cursor:pointer}
+.mark input{width:22px;height:22px;accent-color:var(--navy);flex:none}
+.mark small{display:block;color:var(--muted);font-size:.8rem;line-height:1.3}
+.counter{display:flex;align-items:center;gap:10px}
+.counter button{width:40px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);cursor:pointer;font-size:1.2rem}
+.counter output{min-width:2ch;text-align:center;font-weight:700;font-variant-numeric:tabular-nums;font-size:1.2rem}
+.primary{background:var(--navy);color:var(--on-navy);border:0;border-radius:10px;padding:12px 16px;font-weight:700;cursor:pointer}
+.ghost{background:transparent;border:1px solid var(--line);border-radius:10px;padding:11px 14px;font-weight:600;cursor:pointer}
+.primary:focus-visible,.ghost:focus-visible,.play:focus-visible,.chip:focus-visible,.tab:focus-visible{outline:3px solid var(--brass);outline-offset:2px}
+.grid90{display:grid;gap:6px}
+.wk{display:grid;grid-template-columns:2.8rem 1fr;gap:6px;align-items:center}
+.wk span{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.cells{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.chip{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:7px;padding:7px 0;font-size:.8rem;font-variant-numeric:tabular-nums;cursor:pointer}
+.chip.done{background:var(--navy);color:var(--on-navy);border-color:var(--navy)}
+.chip.today{box-shadow:inset 0 0 0 2px var(--brass)}
+.chip.future{opacity:.55}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.stat{background:var(--brass-soft);border-radius:10px;padding:10px;text-align:center}
+.stat b{display:block;font-family:var(--display);font-size:1.6rem;font-variant-numeric:tabular-nums}
+.stat span{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+label.field{display:grid;gap:6px;font-weight:600}
+label.field input{font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink)}
+.note{font-size:.85rem;color:var(--muted)}
+nav.tabs{position:fixed;left:0;right:0;bottom:0;background:var(--surface);border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);padding-bottom:env(safe-area-inset-bottom,0px);z-index:5}
+.tab{background:none;border:0;padding:10px 0 12px;font-size:.75rem;color:var(--muted);display:grid;justify-items:center;gap:3px;cursor:pointer}
+.tab svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8}
+.tab[aria-current="page"]{color:var(--brass);font-weight:700}
+.welcome h1{font-size:2rem}
+.welcome .lead{font-family:var(--display);font-size:1.15rem}
+[hidden]{display:none!important}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
